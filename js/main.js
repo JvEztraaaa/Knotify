@@ -62,6 +62,7 @@ const init = () => {
     initSlideshow();
     initGallery();
     initMobileGallery();
+    initScrollAnimations();
     attachEventListeners();
     startAutoplay();
     initMusic();
@@ -272,6 +273,58 @@ const pauseMusic = () => {
         state.isMusicPlaying = false;
         elements.musicToggle?.classList.add('paused');
     }
+};
+
+// ===================================
+// Scroll Animation Functions
+// ===================================
+
+/**
+ * Initialize scroll-triggered animations
+ */
+const initScrollAnimations = () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -100px 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                // Optional: stop observing after animation
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observe all content sections
+    const sections = document.querySelectorAll('.content-section');
+    sections.forEach(section => {
+        observer.observe(section);
+    });
+
+    // Observe gallery items
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    galleryItems.forEach(item => {
+        item.classList.add('animate-item');
+        observer.observe(item);
+    });
+
+    // Observe detail cards
+    const detailCards = document.querySelectorAll('.detail-card');
+    detailCards.forEach(card => {
+        card.classList.add('animate-item');
+        observer.observe(card);
+    });
+
+    // Observe timeline items
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    timelineItems.forEach(item => {
+        item.classList.add('animate-item');
+        observer.observe(item);
+    });
 };
 
 // ===================================
@@ -512,8 +565,8 @@ const scrollToTop = () => {
  * Handle RSVP button click
  */
 const handleRSVP = () => {
-    // Placeholder for RSVP functionality
-    alert('RSVP functionality coming soon! Please contact us directly.');
+    // Redirect to Google Form
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLSc1INYyQGPpu_1Vq4zZzjF28_y03z-Vdr1x1EHw6kLARdI4UQ/viewform', '_blank');
 };
 
 // ===================================
