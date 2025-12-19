@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex & Bella - Wedding Invitation</title>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hamburger Navigation -->
+    <button class="hamburger-menu" id="hamburgerMenu" aria-label="Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Music Toggle Button -->
+    <button class="music-toggle" id="musicToggle" aria-label="Toggle Music">
+        <svg class="music-icon playing" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+        </svg>
+        <svg class="music-icon paused" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18V5l12-2v13"></path>
+            <circle cx="6" cy="18" r="3"></circle>
+            <circle cx="18" cy="16" r="3"></circle>
+            <line x1="9" y1="9" x2="21" y2="7"></line>
+        </svg>
+    </button>
+
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/sounds/married-life.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Navigation Overlay -->
+    <nav class="nav-overlay" id="navOverlay">
+        <button class="nav-close" id="navClose" aria-label="Close Menu">&times;</button>
+        <ul class="nav-menu">
+            <li><a href="#calendar" class="nav-link">Calendar</a></li>
+            <li><a href="#details" class="nav-link">Details</a></li>
+            <li><a href="#timeline" class="nav-link">Timeline</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#attire" class="nav-link">Attire</a></li>
+            <li><a href="#rsvp" class="nav-link">RSVP</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Left Side: Slideshow -->
+        <div class="slideshow-container">
+            <div class="slideshow-wrapper">
+                <div class="slide active">
+                    <img src="assets/images/hero-image.jpg" alt="Alex and Bella">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/hero-image-2.jpg" alt="Alex and Bella">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/hero-image-3.jpg" alt="Alex and Bella">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/hero-image-4.jpg" alt="Alex and Bella">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/couple-photo-1.jpg" alt="Alex and Bella">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/couple-photo-2.jpg" alt="Alex and Bella">
+                </div>
+            </div>
+            
+            <!-- Slideshow Controls -->
+            <button class="slide-control prev" id="prevSlide" aria-label="Previous Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <button class="slide-control next" id="nextSlide" aria-label="Next Slide">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+            
+            <!-- Slide Indicators -->
+            <div class="slide-indicators"></div>
+            
+            <!-- Hero Text Overlay -->
+            <div class="hero-text">
+                <h1 class="hero-names">
+                    <span>ALEX</span>
+                    <span class="and">and</span>
+                    <span>BELLA</span>
+                </h1>
+                <p class="hero-tagline">We can't wait to share our special day with you</p>
+            </div>
+        </div>
+
+        <!-- Right Side: Scrollable Content -->
+        <div class="content-container">
+            <div class="content-scroll">
+                <!-- Save The Date Section -->
+                <section id="save-the-date" class="content-section">
+                    <h2 class="section-title">SAVE THE DATE</h2>
+                    <div class="date-display">
+                        <span class="date-number">05</span>
+                        <span class="date-separator">.</span>
+                        <span class="date-number">26</span>
+                        <span class="date-separator">.</span>
+                        <span class="date-number">26</span>
+                    </div>
+                </section>
+
+                <!-- Invitation Section -->
+                <section id="invitation" class="content-section">
+                    <h2 class="section-title">YOU ARE INVITED!</h2>
+                    <p class="section-text">
+                        With joyful hearts and deep gratitude, we invite you to celebrate 
+                        the beginning of our forever. As we embark on this beautiful journey 
+                        together, your love and presence mean the world to us.
+                    </p>
+                </section>
+
+                <!-- Calendar Section -->
+                <section id="calendar" class="content-section">
+                    <h3 class="calendar-month">MAY 2026</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-day-name">Sun</div>
+                        <div class="calendar-day-name">Mon</div>
+                        <div class="calendar-day-name">Tue</div>
+                        <div class="calendar-day-name">Wed</div>
+                        <div class="calendar-day-name">Thu</div>
+                        <div class="calendar-day-name">Fri</div>
+                        <div class="calendar-day-name">Sat</div>
+                        <div class="calendar-date empty"></div>
+                        <div class="calendar-date empty"></div>
+                        <div class="calendar-date empty"></div>
+                        <div class="calendar-date empty"></div>
+                        <div class="calendar-date">1</div>
+                        <div class="calendar-date">2</div>
+                        <div class="calendar-date">3</div>
+                        <div class="calendar-date">4</div>
+                        <div class="calendar-date">5</div>
+                        <div class="calendar-date">6</div>
+                        <div class="calendar-date">7</div>
+                        <div class="calendar-date">8</div>
+                        <div class="calendar-date">9</div>
+                        <div class="calendar-date">10</div>
+                        <div class="calendar-date">11</div>
+                        <div class="calendar-date">12</div>
+                        <div class="calendar-date">13</div>
+                        <div class="calendar-date">14</div>
+                        <div class="calendar-date">15</div>
+                        <div class="calendar-date">16</div>
+                        <div class="calendar-date">17</div>
+                        <div class="calendar-date">18</div>
+                        <div class="calendar-date">19</div>
+                        <div class="calendar-date">20</div>
+                        <div class="calendar-date">21</div>
+                        <div class="calendar-date">22</div>
+                        <div class="calendar-date">23</div>
+                        <div class="calendar-date">24</div>
+                        <div class="calendar-date">25</div>
+                        <div class="calendar-date wedding-date">26</div>
+                        <div class="calendar-date">27</div>
+                        <div class="calendar-date">28</div>
+                        <div class="calendar-date">29</div>
+                        <div class="calendar-date">30</div>
+                        <div class="calendar-date">31</div>
+                    </div>
+                </section>
+
+                <!-- Details Section -->
+                <section id="details" class="content-section">
+                    <h2 class="section-title">DETAILS</h2>
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <div class="detail-label">CEREMONY</div>
+                            <h3 class="detail-venue">NATIONAL CITY UNITED CHURCH</h3>
+                            <p class="detail-address">
+                                96 Times Street West<br>
+                                Triangle, Quezon City
+                            </p>
+                            <a href="https://maps.app.goo.gl/TAQLbGiiCftukHDi6" target="_blank" rel="noopener noreferrer" class="map-link">
+                                <img src="assets/images/church-map.png" alt="Church Location Map" class="detail-map">
+                            </a>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">RECEPTION</div>
+                            <h3 class="detail-venue">SOLAIRE RESORT NORTH</h3>
+                            <p class="detail-address">
+                                Vertis North, 1 Solaire Way,<br>
+                                Quezon City, 1105
+                            </p>
+                            <a href="https://maps.app.goo.gl/bZdoVwtJazgvLvkd8" target="_blank" rel="noopener noreferrer" class="map-link">
+                                <img src="assets/images/solaire-map.png" alt="Reception Location Map" class="detail-map">
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Timeline Section -->
+                <section id="timeline" class="content-section">
+                    <h2 class="section-title">TIMELINE</h2>
+                    <div class="timeline-wrapper">
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">2:00 PM - 3:30 PM</div>
+                                <div class="timeline-event">WE DO</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">3:30 PM - 4:00 PM</div>
+                                <div class="timeline-event">WE SOCIALIZE</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">4:00 PM - 7:00 PM</div>
+                                <div class="timeline-event">WE DINE</div>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <div class="timeline-time">7:00 PM ONWARDS</div>
+                                <div class="timeline-event">WE DANCE</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Gallery Section -->
+                <section id="gallery" class="content-section">
+                    <h2 class="section-title">OUR MOMENTS</h2>
+                    
+                    <!-- Desktop Gallery Grid -->
+                    <div class="gallery-masonry desktop-gallery">
+                        <div class="gallery-item tall" data-index="0">
+                            <img src="assets/images/couple-photo-1.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item" data-index="1">
+                            <img src="assets/images/couple-photo-2.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item wide" data-index="2">
+                            <img src="assets/images/hero-image-2.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item" data-index="3">
+                            <img src="assets/images/couple-photo-3.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item tall" data-index="4">
+                            <img src="assets/images/couple-photo-4.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item" data-index="5">
+                            <img src="assets/images/couple-photo-5.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item wide" data-index="6">
+                            <img src="assets/images/hero-image-3.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                        <div class="gallery-item" data-index="7">
+                            <img src="assets/images/couple-photo-6.jpg" alt="Alex and Bella" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Mobile Gallery Carousel -->
+                    <div class="mobile-gallery-carousel">
+                        <div class="mobile-gallery-track">
+                            <div class="mobile-gallery-slide" data-index="0">
+                                <img src="assets/images/couple-photo-1.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="1">
+                                <img src="assets/images/couple-photo-2.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="2">
+                                <img src="assets/images/hero-image-2.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="3">
+                                <img src="assets/images/couple-photo-3.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="4">
+                                <img src="assets/images/couple-photo-4.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="5">
+                                <img src="assets/images/couple-photo-5.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="6">
+                                <img src="assets/images/hero-image-3.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                            <div class="mobile-gallery-slide" data-index="7">
+                                <img src="assets/images/couple-photo-6.jpg" alt="Alex and Bella" loading="lazy">
+                            </div>
+                        </div>
+                        <button class="mobile-gallery-control prev" id="mobileGalleryPrev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="mobile-gallery-control next" id="mobileGalleryNext">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="mobile-gallery-indicators"></div>
+                    </div>
+                </section>
+
+                <!-- Attire Section -->
+                <section id="attire" class="content-section">
+                    <h2 class="section-title">ATTIRE</h2>
+                    <p class="section-text">
+                        Kindly wear your best attire in shades of 
+                        <strong>gold, nude, or brown</strong> as we celebrate 
+                        this special occasion in style!
+                    </p>
+                    <div class="color-palette">
+                        <div class="color-swatch" style="background-color: #D4AF37;"></div>
+                        <div class="color-swatch" style="background-color: #C9A66B;"></div>
+                        <div class="color-swatch" style="background-color: #E5C8A8;"></div>
+                        <div class="color-swatch" style="background-color: #6B5D4F;"></div>
+                    </div>
+                </section>
+
+                <!-- RSVP Section -->
+                <section id="rsvp" class="content-section">
+                    <h2 class="section-title">We Hope to See You There!</h2>
+                    <p class="section-text">Please let us know if you can join us on our special day.</p>
+                    <button class="rsvp-button" id="rsvpButton">RSVP NOW</button>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <p class="footer-text">Made with love for Alex & Bella</p>
+                    <p class="footer-date">May 26, 2026</p>
+                </footer>
+            </div>
+
+            <!-- Back to Top Button -->
+            <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="18 15 12 9 6 15"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Gallery Lightbox Modal -->
+    <div class="gallery-lightbox" id="galleryLightbox">
+        <button class="lightbox-close" id="lightboxClose">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+        </button>
+        <div class="lightbox-content">
+            <button class="lightbox-control prev" id="lightboxPrev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+            <img src="" alt="Gallery Image" class="lightbox-image" id="lightboxImage">
+            <button class="lightbox-control next" id="lightboxNext">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+        <div class="lightbox-counter"><span id="lightboxCounter">1 / 8</span></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
